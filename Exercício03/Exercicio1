@@ -1,0 +1,19 @@
+// (1) - Escreva um programa que receba um vetor qualquer e um número inteiro n, e retorne um novo vetor com os elementos rotacionados n posições para a direita.
+
+// Exemplo de vetor e deslocamento:
+// let frutas = ["manga", "batata", "quiabo", "inhame", "cenoura"];
+
+// Atenção: o resultado esperado é: [ "quiabo", "inhame", "cenoura", " manga ", " batata "]
+
+
+function rotacionarVetor(vetor, n) {
+  const tamanho = vetor.length;
+  const deslocamento = n % tamanho;  // garante que n não seja maior que o tamanho do vetor
+  return vetor.slice(tamanho - deslocamento).concat(vetor.slice(0, tamanho - deslocamento));
+}
+let frutas = ["manga", "batata", "quiabo", "inhame", "cenoura"];
+let n = 3;
+
+let resultado = rotacionarVetor(frutas, n);
+console.log(resultado);
+// Saída: ["quiabo", "inhame", "cenoura", "manga", "batata"]
